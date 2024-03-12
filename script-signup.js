@@ -9,45 +9,45 @@ let updateCartItem = () => {
 
 updateCartItem();
 
-const form = document.querySelector('form');
-const nameError = document.querySelector('.name-error');
-const emailError = document.querySelector('.email-error');
-const confirmPasswordError = document.querySelector('.confirm-password-error');
+// const form = document.querySelector('form');
+// const nameError = document.querySelector('.name-error');
+// const emailError = document.querySelector('.email-error');
+// const confirmPasswordError = document.querySelector('.confirm-password-error');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
 
-    // get values
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    const confirmPassword = form.confirmPassword.value;
+//     // get values
+//     const name = form.name.value;
+//     const email = form.email.value;
+//     const password = form.password.value;
+//     const confirmPassword = form.confirmPassword.value;
 
-    // reset errors
-    nameError.textContent    = '';
-    emailError.textContent    = '';
-    confirmPasswordError.textContent = '';
+//     // reset errors
+//     nameError.textContent    = '';
+//     emailError.textContent    = '';
+//     confirmPasswordError.textContent = '';
 
-    try{
-        const result = await fetch('http://localhost:3300/signup',{
-            credentials: "include",
-            method: 'POST',
-            body: JSON.stringify({ name, email, password, confirmPassword }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        const data = await result.json();
-        if(data.errors){
-            nameError.textContent = data.errors.name;
-            emailError.textContent = data.errors.email;
-            confirmPasswordError.textContent = data.errors.password;
-        }
-        if(data.user){
-            location.assign('index.html');
-        }
-    } catch(err){
-        console.log(err);
-    }
-});
+//     try{
+//         const result = await fetch('http://localhost:3300/signup',{
+//             credentials: "include",
+//             method: 'POST',
+//             body: JSON.stringify({ name, email, password, confirmPassword }),
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+//         const data = await result.json();
+//         if(data.errors){
+//             nameError.textContent = data.errors.name;
+//             emailError.textContent = data.errors.email;
+//             confirmPasswordError.textContent = data.errors.password;
+//         }
+//         if(data.user){
+//             location.assign('index.html');
+//         }
+//     } catch(err){
+//         console.log(err);
+//     }
+// });
 
 // fetch data api wilayah indonesia
 const getDataApiWilayahIndonesia = async (url) => {
