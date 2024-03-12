@@ -275,16 +275,27 @@ function showTab(n) {
   var tabs = document.getElementsByClassName("tab");
   tabs[n].style.display = "block";
   // ... and fix the Previous/Next buttons:
-  if (n == 0) {
+  if(n == 0){
     document.getElementById("prevBtn").style.display = "none";
-  } else {
+    document.getElementById("nextBtn").style.display = "inline";
+  } else if(n == (tabs.length - 1)){
     document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (tabs.length - 1)) {
     document.getElementById("nextBtn").style.display = "none";
   } else {
+    document.getElementById("prevBtn").style.display = "inline";
     document.getElementById("nextBtn").style.display = "inline";
   }
+
+  // if (n == 0) {
+  //   document.getElementById("prevBtn").style.display = "none";
+  // } else {
+  //   document.getElementById("prevBtn").style.display = "inline";
+  // }
+  // if (n == (tabs.length - 1)) {
+  //   document.getElementById("nextBtn").style.display = "none";
+  // } else {
+  //   document.getElementById("nextBtn").style.display = "inline";
+  // }
   // ... and run a function that displays the correct step indicator:
   stepIndicator(n)
 }
