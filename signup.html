@@ -68,10 +68,8 @@
              <a href="login.html">I have an account</a> 
           </div>
           <div>
-            <!-- <h3>Personal Information</h3> -->
-            <form method="post">
               <div class="tab">
-                <div class="md-3">
+                <div class="mb-3">
                   <label for="exampleInputName" class="form-label">Name</label>
                   <input type="text" class="form-control" id="exampleInputName" name="name" required>
                   <small id="nameError" class="name-error text-danger opacity-75"></small>
@@ -115,7 +113,6 @@
                   </div>
                   <div class="md-3">
                     <label for="inputDetailAddress" class="form-label">Detail Address</label>
-                    <!-- <input type="text" class="form-control" id="inputDetailAddress" name="detailAddress" required> -->
                     <textarea class="form-control" id="inputDetailAddress" rows="3" name="detailAddress" required></textarea>
                   </div>
                   <div class="mb-3">
@@ -139,7 +136,58 @@
               </div>
               <div class="tab">
                 <div class="confirmation-info">
-                  <h3>Confirmation Information</h3>
+                  <!-- <h3>Confirmation Information</h3> -->
+                  <form method="post">
+                    <div class="mb-3">
+                      <label class="form-label">Name</label>
+                      <input type="text" class="form-control" name="username" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Email address</label>
+                      <input type="email" class="form-control" name="useremail" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" class="form-control" name="userpassword" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Province</label>
+                      <input type="text" class="form-control" name="userprovince" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">City</label>
+                      <input type="text" class="form-control" name="usercity" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">District</label>
+                      <input type="text" class="form-control" name="userdistrict" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Village</label>
+                      <input type="text" class="form-control" name="uservillage" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Code Post</label>
+                      <input type="text" class="form-control" name="usercodepost" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Detail Address</label>
+                      <input type="text" class="form-control" name="userdetailaddress" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Nickname Address</label>
+                      <input type="text" class="form-control" name="usernicknameaddress" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Latitude</label>
+                      <input type="text" class="form-control" name="userlatitude" disabled>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Longitude</label>
+                      <input type="text" class="form-control" name="userlongitude" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
                 </div>
               </div>
               <!-- <button type="submit" class="btn btn-success mb-3">Submit</button> -->
@@ -149,7 +197,6 @@
                   <button class="btn btn-success" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                 </div>
               </div>
-            </form>
           </div>
         </div>
         <div class="px-3 py-2 text-bg-dark">
