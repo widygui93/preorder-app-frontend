@@ -232,8 +232,8 @@ document.getElementsByClassName('btn-search-address')[0].addEventListener("click
 });
 
 let map = L.map('map');
-let latitude;
-let longitude;
+let latitude = 0;
+let longitude = 0;
 
 function showInMap(address) {
 
@@ -316,6 +316,7 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && currentTab == 0 && !validateFormPersonalInformation()) return false;
   if (n == 1 && currentTab == 1 && !validateFormShippingAddressInformation()) return false;
+  getDataForConfirmationPage()
   // Hide the current tab:
   tabs[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -445,6 +446,52 @@ function validateFormShippingAddressInformation(){
         valid = true;
     }
     return valid;
+}
+
+function getDataForConfirmationPage(){
+    let valueInputName = document.getElementById("exampleInputName").value;
+    let nameConfirm = document.getElementsByClassName("name-confirm")[0];
+    nameConfirm.value = valueInputName.length === 0 ? "" : valueInputName;
+
+    let valueInputEmail = document.getElementById("exampleInputEmail1").value;
+    let emailConfirm = document.getElementsByClassName("email-confirm")[0];
+    emailConfirm.value = valueInputEmail.length === 0 ? "" : valueInputEmail;
+    
+    let valueInputPassword = document.getElementById("exampleInputPassword1").value;
+    let passwordConfirm = document.getElementsByClassName("password-confirm")[0];
+    passwordConfirm.value = valueInputPassword.length === 0 ? "" : valueInputPassword;
+    
+    let optionSelectProvince = document.getElementsByClassName("select-province")[0];
+    let provinceConfirm = document.getElementsByClassName("province-confirm")[0];
+    provinceConfirm.value = optionSelectProvince.value == "0" ? "" : optionSelectProvince.options[optionSelectProvince.selectedIndex].text;
+    
+    let optionSelectCity = document.getElementsByClassName("select-city")[0];
+    let cityConfirm = document.getElementsByClassName("city-confirm")[0];
+    cityConfirm.value = optionSelectCity.value.length === 0 ? "" : optionSelectCity.options[optionSelectCity.selectedIndex].text;
+    
+    let optionSelectDistrict = document.getElementsByClassName("select-district")[0];
+    let districtConfirm = document.getElementsByClassName("district-confirm")[0];
+    districtConfirm.value = optionSelectDistrict.value.length === 0 ? "" : optionSelectDistrict.options[optionSelectDistrict.selectedIndex].text;
+    
+    let optionSelectVillage = document.getElementsByClassName("select-village")[0];
+    let villageConfirm = document.getElementsByClassName("village-confirm")[0];
+    villageConfirm.value = optionSelectVillage.value.length === 0 ? "" : optionSelectVillage.options[optionSelectVillage.selectedIndex].text;
+    
+    let valueInputCodePost = document.getElementById("inputCodePost").value;
+    let codePostConfirm = document.getElementsByClassName("code-post-confirm")[0];
+    codePostConfirm.value = valueInputCodePost.length === 0 ? "" : valueInputCodePost;
+    
+    let valueInputDetailAddress = document.getElementById("inputDetailAddress").value;
+    let detailAddressConfirm = document.getElementsByClassName("detail-address-confirm")[0];
+    detailAddressConfirm.value = valueInputDetailAddress.length === 0 ? "" : valueInputDetailAddress;
+    
+    let optionSelectNicknameAddress = document.getElementsByClassName("select-nickname-address")[0];
+    let nicknameAddressConfirm = document.getElementsByClassName("nickname-address-confirm")[0];
+    nicknameAddressConfirm.value = optionSelectNicknameAddress.options[optionSelectNicknameAddress.selectedIndex].text;
+    
+    document.getElementsByClassName("lat-confirm")[0].value = latitude
+    document.getElementsByClassName("log-confirm")[0].value = longitude
+
 }
 
 // resource
